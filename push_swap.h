@@ -3,11 +3,7 @@
 
 #include <stdlib.h>
 
-struct  a_stack
-{
-    int countent;
-    struct stack_a *next;
-} t_stack;
+
 
 int	ft_atoi(const char *str);
 int	ft_isdigit(int c);
