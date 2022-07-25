@@ -1,13 +1,13 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdlib.h>
+#include "libft/libft.h"
+#include<stdlib.h>
+#include<stdio.h>
 
-
-
-int	ft_atoi(const char *str);
-int	ft_isdigit(int c);
-char	**ft_split(char	const *s, char c);
-size_t	ft_strlen(const char *str);
+typedef struct t_stack{
+    int data;
+    struct t_stack *next;
+} s_stack;
 
 #endif

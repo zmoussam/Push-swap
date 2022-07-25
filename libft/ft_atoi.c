@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "libft.h"
 
 static int	check_nbr(unsigned long nbr, int signe)
 {
