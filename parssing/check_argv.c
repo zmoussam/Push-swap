@@ -24,3 +24,25 @@ void arg_isdigit(char **argv, int argc)
         i--;
     }
 }
+
+void arg_isrepeat(char **argv,int argc)
+{
+    int i;
+    int j;
+
+    i = argc - 1;
+    j = argc - 1;
+    while(i > 0)
+    {
+        j = argc - 1;
+        while(j > 0)
+        {
+             if(i == j)
+                j--;
+            else if(ft_strcmp(argv[i], argv[j]) == 0)
+                print_error();
+            j--;
+        }
+    i--;
+    }
+}

@@ -1,7 +1,4 @@
 // #include "push_swap.h"
-#include<stdlib.h>
-#include<stdio.h>
-#include<unistd.h>
 #include "push_swap.h"
 
 int main(int argc, char **argv)
@@ -13,7 +10,7 @@ int main(int argc, char **argv)
     int j;
 
     i = argc - 1;
-    j = 0;
+    j = argc - 1;
     stack_a = (s_stack *)malloc(sizeof(s_stack));
     stack_b = (s_stack *)malloc(sizeof(s_stack));
     if(!stack_a || !stack_b)
@@ -21,8 +18,8 @@ int main(int argc, char **argv)
     stack_a = NULL;
     if(argc > 1)
     {
-        
-        arg_isdigit(argv, argc);   
+        arg_isdigit(argv, argc);
+        arg_isrepeat(argv, argc);
         stack_a = empiler(stack_a, argv, argc);
     }
     head = stack_a;

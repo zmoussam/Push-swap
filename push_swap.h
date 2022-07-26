@@ -15,4 +15,5 @@ typedef struct t_stack{
 s_stack* empiler(s_stack *pile, char **argv,int argc);
 void arg_isdigit(char **argv,int argc);
 void print_error();
+void arg_isrepeat(char **argv,int argc);
 #endif
