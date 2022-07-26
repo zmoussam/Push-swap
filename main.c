@@ -4,14 +4,28 @@
 #include "push_swap.h"
 
 
-void empiler(s_stack *head,int valeur)
+// void empiler(s_stack *head, int valeur)
+// {
+//     s_stack *new;
+//     new = (s_stack *)malloc(sizeof(s_stack));
+//     new->data = valeur;
+//     new->next = head;
+//     head = new;
+//    // printf("%d\n",head->next);
+// }
+
+s_stack* empiler(s_stack *pile, int nvNombre)
 {
-    s_stack *new;
-    new = (s_stack *)malloc(sizeof(s_stack));
-    new->data = valeur;
-    new->next = head;
-    head = new;
-    printf("%d\n",head->next);
+    s_stack *nouveau = malloc(sizeof(*nouveau));
+    if (pile == NULL || nouveau == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+
+    nouveau->data = nvNombre;
+    nouveau->next = pile;
+    pile = nouveau;
+    return pile;
 }
 int main(int argc, char **argv)
 {
@@ -20,6 +34,7 @@ int main(int argc, char **argv)
     s_stack *head;
     int i;
     int j;
+
     i = 1;
     j = 0;
     stack_a = (s_stack *)malloc(sizeof(s_stack));
@@ -30,10 +45,9 @@ int main(int argc, char **argv)
     stack_a->next = NULL;
     if(argc > 1)
     {
-        while(argv[i])
+        while(i < argc)
         {
-            empiler(stack_a, ft_atoi(argv[i]));
-             printf("%d\n",stack_a->data);
+            stack_a = empiler(stack_a, ft_atoi(argv[i]));
             i++;
         }
     }
