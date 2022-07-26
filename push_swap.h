@@ -4,6 +4,8 @@
 #include "libft/libft.h"
 #include<stdlib.h>
 #include<stdio.h>
+#include<stdio.h>
+#include<unistd.h>
 
 typedef struct t_stack{
     int data;
@@ -11,4 +13,6 @@ typedef struct t_stack{
 } s_stack;
 
 s_stack* empiler(s_stack *pile, char **argv,int argc);
+void arg_isdigit(char **argv,int argc);
+void print_error();
 #endif
