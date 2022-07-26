@@ -14,17 +14,21 @@
 //    // printf("%d\n",head->next);
 // }
 
-s_stack* empiler(s_stack *pile, int nvNombre)
+s_stack* empiler(s_stack *pile, int data)
 {
-    s_stack *nouveau = malloc(sizeof(*nouveau));
-    if (pile == NULL || nouveau == NULL)
+    s_stack *new;
+    new = malloc(sizeof(s_stack));
+    new->data = data;
+    if (pile == NULL)
     {
-        exit(EXIT_FAILURE);
+        new->next = NULL;
+        pile = new;
     }
-
-    nouveau->data = nvNombre;
-    nouveau->next = pile;
-    pile = nouveau;
+    else
+    {
+        new->next = pile;
+        pile = new;
+    }
     return pile;
 }
 int main(int argc, char **argv)
@@ -35,20 +39,19 @@ int main(int argc, char **argv)
     int i;
     int j;
 
-    i = 1;
+    i = argc - 1 ;
     j = 0;
     stack_a = (s_stack *)malloc(sizeof(s_stack));
     stack_b = (s_stack *)malloc(sizeof(s_stack));
     if(!stack_a || !stack_b)
         exit(-1);
-    stack_a->data = 1;
-    stack_a->next = NULL;
+    stack_a = NULL;
     if(argc > 1)
     {
-        while(i < argc)
+        while(i > 0)
         {
             stack_a = empiler(stack_a, ft_atoi(argv[i]));
-            i++;
+            i--;
         }
     }
     head = stack_a;
