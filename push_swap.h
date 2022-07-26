@@ -10,4 +10,5 @@ typedef struct t_stack{
     struct t_stack *next;
 } s_stack;
 
+s_stack* empiler(s_stack *pile, char **argv,int argc);
 #endif
