@@ -18,8 +18,11 @@ void arg_isdigit(char **argv, int argc)
         j = 0;
         while(argv[i][j])
         {
-            if(!ft_isdigit(argv[i][j]) && argv[i][j] > 32)
+            if(!ft_isdigit(argv[i][j]) && argv[i][j] > 32 &&
+            (argv[i][j] != '+' && argv[i][j] != '-'))
+            {
                 print_error();
+            }
             j++;
         }
         i--;
