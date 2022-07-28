@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pile_function.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/07/28 18:25:17 by zmoussam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 s_stack* empiler(s_stack *pile, char **argv ,int argc)
@@ -24,6 +36,7 @@ s_stack* empiler(s_stack *pile, char **argv ,int argc)
             pile = new;
             j--; 
         }
+        /* free sp! */
         i--; 
     }
     return pile;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/28 17:32:28 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/07/28 17:32:28 by zmoussam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "../push_swap.h"
 
@@ -17,15 +29,18 @@ void count_sign(const char *str)
 	if(count > 1)
 		print_error();
 }
-static int	check_nbr(unsigned long nbr, int signe)
+static void	check_nbr(unsigned long nbr, int signe)
 {
-	if (signe < 0)
+	if (signe == -1)
 	{
-		if (nbr == 2147483648)
-			return (-2147483648);
-		return (0);
+		if(nbr > 2147483648)
+			print_error();
 	}
-	return (-1);
+	else
+	{
+		if(nbr > 2147483647)
+			print_error();
+	}
 }
 
 int	ft_atoi(const char *str)
@@ -52,7 +67,6 @@ int	ft_atoi(const char *str)
 		nombre = nombre + (int)(str[i] - '0');
 		i++;
 	}
-	if (nombre >= 2147483648)
-		return (check_nbr(nombre, signe));
+	check_nbr(nombre, signe);
 	return (nombre * signe);
 }
