@@ -21,6 +21,7 @@ int main(int argc, char **argv)
         arg_isdigit(argv, argc);
         arg_isrepeat(argv, argc);
         stack_a = empiler(stack_a, argv, argc);
+        
     }
     head = stack_a;
     while(head)

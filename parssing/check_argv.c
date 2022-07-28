@@ -15,9 +15,10 @@ void arg_isdigit(char **argv, int argc)
     j = 0;
     while(i > 0)
     {
+        j = 0;
         while(argv[i][j])
         {
-            if(!ft_isdigit(argv[i][j]))
+            if(!ft_isdigit(argv[i][j]) && argv[i][j] > 32)
                 print_error();
             j++;
         }
