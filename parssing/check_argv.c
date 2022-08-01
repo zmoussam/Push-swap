@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/07/28 17:32:54 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/01 19:28:40 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void arg_isrepeat(char **argv,int argc)
         j = argc - 1;
         while(j > 0)
         {
-             if(i == j)
+            if(i == j)
                 j--;
             else if(ft_strcmp(argv[i], argv[j]) == 0)
                 print_error();
