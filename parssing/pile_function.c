@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/07/28 18:25:17 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/02 22:22:38 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ s_stack* empiler(s_stack *pile, char **argv ,int argc)
 
     j = 0;
     i = argc - 1;
-    while(i > 0)
+    while(i >= 0)
     {
         char **sp;
         sp = ft_split(argv[i], ' ');

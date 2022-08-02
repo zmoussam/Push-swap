@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/02 19:30:56 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/02 22:21:47 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,17 @@ void arg_isrepeat(char **argv,int argc)
     int len_sp;
     int j;
     int i;
-    
-    len_arg = argc - 1;
-    while(len_arg > 0)
+    s_stack *head;
+    s_stack *tmp;
+    tmp = (s_stack *)malloc(sizeof(s_stack));
+    len_arg = 1;
+    while(len_arg < argc)
     {
         char **sp;
         sp = ft_split(argv[len_arg], ' ');
         len_sp = 0;
         while (sp[len_sp] != NULL)
             len_sp++;
-        printf("%d\n",len_sp);
         j = 0;
         i = 0;
         while(i < len_sp)
@@ -75,9 +76,16 @@ void arg_isrepeat(char **argv,int argc)
             }
             i++;
         }
-        len_arg--;
-        
+        tmp = empiler(tmp, sp, len_sp);
+    head = tmp;
+    while(head)
+    {
+        printf("%d\n", head->data);
+        head = head->next;
     }
+        len_arg++;
+    }
+
     // i = argc - 1;
     // j = argc - 1;
     // while(i > 0)

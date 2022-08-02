@@ -35,10 +35,10 @@ int main(int argc, char **argv)
         stack_a = empiler(stack_a, argv, argc);
         
     }
-    head = stack_a;
-    while(head)
-    {
-        printf("%d\n", head->data);
-        head = head->next;
-    }
+    // head = stack_a;
+    // while(head)
+    // {
+    //     printf("%d\n", head->data);
+    //     head = head->next;
+    // }
 }
