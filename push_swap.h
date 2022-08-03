@@ -27,4 +27,7 @@ typedef struct t_stack{
 s_stack* empiler(s_stack *pile, char **argv,int argc);
 void arg_isdigit(char **argv,int argc);
 void print_error();
+void is_repeat(s_stack *stack_a);
+void swap(s_stack *list);
+void ss(s_stack *stack_a, s_stack *stack_b);
 #endif
