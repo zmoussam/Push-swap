@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/02 22:21:47 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:01:01 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,80 +41,4 @@ void arg_isdigit(char **argv, int argc)
     }
 }
 
-void arg_isrepeat(char **argv,int argc)
-{
-    int len_arg;
-    int len_sp;
-    int j;
-    int i;
-    s_stack *head;
-    s_stack *tmp;
-    tmp = (s_stack *)malloc(sizeof(s_stack));
-    len_arg = 1;
-    while(len_arg < argc)
-    {
-        char **sp;
-        sp = ft_split(argv[len_arg], ' ');
-        len_sp = 0;
-        while (sp[len_sp] != NULL)
-            len_sp++;
-        j = 0;
-        i = 0;
-        while(i < len_sp)
-        {
-            j = 0;
-            while(j < len_sp)
-            {
-               if(i == j)
-               {
-                   j++;
-                 continue;   
-               }
-               if(ft_strcmp(sp[i], sp[j]) == 0)
-                    print_error();
-              j++;
-            }
-            i++;
-        }
-        tmp = empiler(tmp, sp, len_sp);
-    head = tmp;
-    while(head)
-    {
-        printf("%d\n", head->data);
-        head = head->next;
-    }
-        len_arg++;
-    }
 
-    // i = argc - 1;
-    // j = argc - 1;
-    // while(i > 0)
-    // {
-    //     char **sp;
-    //     sp = ft_split(argv[i],' ');
-    //     len_sp = 0;
-    //     while(sp[len_sp] != NULL)
-    //         len_sp++;
-    //     len_sp--;
-    //     j = len_sp;
-    //     while(len_sp >= 0)
-    //     {
-    //         if()
-    //         while(j >= 0)
-    //         {
-                
-    //         }
-    //     }
-    //     j = argc - 1;
-    //     if(i == j)
-    //         j--;
-    //     while(j > 0)
-    //     {
-    //         if(ft_strcmp(argv[i], argv[i]) == 0)
-    //             print_error();
-    //         j--;
-    //     }
-    // i--;
-    // }
-    /* free sp */
-}

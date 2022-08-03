@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 17:32:28 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/07/28 17:32:28 by zmoussam         ###   ########.fr       */
+/*   Created: 2022/08/03 17:31:28 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/08/03 17:32:18 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "../push_swap.h"
 
 void count_sign(const char *str)
 {
