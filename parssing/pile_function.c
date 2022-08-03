@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/03 19:21:09 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/03 20:40:34 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ s_stack* empiler(s_stack *pile, char **argv ,int argc)
             pile = new;
             j--; 
         }
-        /* free sp! */
         i--; 
     }
     return pile;
@@ -55,6 +54,5 @@ s_stack* empiler(s_stack *pile, char **argv ,int argc)
 //         printf("%d\n", head->data);  
 //         head = head->next;
 //     }
-//      printf("%s\n",head);
-    
+//      printf("%s\n",head); 
 // }
