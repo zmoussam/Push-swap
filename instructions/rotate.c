@@ -6,28 +6,29 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:18 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/04 20:50:29 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/04 21:49:00 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void rotate(s_stack *stack, char *inst)
+void rotate(s_stack **stack, char *inst)
 {
-   if(stack)
+   if(*stack)
    {
-      int tmp;
+      s_stack *tmp;
       s_stack *head;
-      
-      tmp = stack->data;
-      head = stack;
-      while(head != NULL)
+      tmp = *stack;
+      head = *stack;
+      while(head)
       {
          if(head->next == NULL)
          {
-            stack->data = head->data;
-            head->data = tmp;
-         }   
+            *stack = tmp->next;
+            head->next = tmp;
+            tmp->next = NULL;
+            break;
+         }
          head = head->next;
       }
       write(1, inst, 2);
@@ -36,6 +37,6 @@ void rotate(s_stack *stack, char *inst)
 }
 void rr(s_stack *stack_a, s_stack *stack_b)
 {
-    rotate(stack_a, "ra");
-    rotate(stack_b, "rb");
+    rotate(&stack_a, "ra");
+    rotate(&stack_b, "rb");
 }

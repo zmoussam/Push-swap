@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:21 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/04 19:10:26 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/04 22:11:51 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,16 @@ void swap(s_stack *stack, char *inst)
         tmp = stack->data;
         stack->data = stack->next->data;
         stack->next->data = tmp;
+        if (!inst)
+            return ;
         write(1, inst, 2);
         write(1, "\n", 1);
     }
 }
 void ss(s_stack *stack_a, s_stack *stack_b)
 {
-    swap(stack_a, "sa");
-    swap(stack_b, "sb");
-}
+    swap(stack_a, NULL);
+    swap(stack_b, NULL);
+    write(1, "ss\n", 3);
+}    
+    

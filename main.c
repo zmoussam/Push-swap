@@ -24,7 +24,7 @@ int main(int argc, char **argv)
         stack_a = empiler(argv, argc);
         is_repeat(stack_a);
     }
-    rotate(stack_a, "ra");
+    rrr(&stack_a, &stack_b);
     head = stack_a;
     while(head)
     {

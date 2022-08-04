@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:10 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/04 19:15:16 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/04 22:12:37 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
         *stack_src = tmp->next;
         tmp->next = *stack_dst;
         *stack_dst = tmp;
+        if(!inst)
+            return;
         write(1, inst, 2);
         write(1, "\n", 1);
      }
