@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 17:32:18 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/04 16:57:35 by zmoussam         ###   ########.fr       */
+/*   Created: 2022/08/04 15:00:37 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/08/04 15:01:15 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void rotate(s_stack **stack, int stack_len)
+s_stack	*ft_lstnew(void *content)
 {
-    int tmp;
-    s_stack *head;
-    tmp = stack->data;
-    head = stack;
-    while(head->next)
-    {
-        head = head->next;
-    }
-    stack->data = head->data;
+	s_stack	*node;
+
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

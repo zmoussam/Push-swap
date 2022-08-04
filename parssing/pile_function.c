@@ -6,17 +6,18 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/03 20:40:34 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/04 18:46:15 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-s_stack* empiler(s_stack *pile, char **argv ,int argc)
+s_stack* empiler(char **argv ,int argc)
 {
     int i;
     int j;
-    
+    void *pile;
+    pile = NULL;
     j = 0;
     i = argc - 1;
     while(i > 0)
