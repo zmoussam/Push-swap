@@ -6,13 +6,13 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:10 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/04 18:56:34 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:15:16 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
- void push(s_stack **stack_dst, s_stack **stack_src)
+ void push(s_stack **stack_dst, s_stack **stack_src, char *inst)
  {
      if(*stack_src)
      {
@@ -21,6 +21,8 @@
         *stack_src = tmp->next;
         tmp->next = *stack_dst;
         *stack_dst = tmp;
+        write(1, inst, 2);
+        write(1, "\n", 1);
      }
  }
 

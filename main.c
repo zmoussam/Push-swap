@@ -24,7 +24,7 @@ int main(int argc, char **argv)
         stack_a = empiler(argv, argc);
         is_repeat(stack_a);
     }
-    push(&stack_a, &stack_b);
+    rotate(stack_a, "ra");
     head = stack_a;
     while(head)
     {
@@ -32,12 +32,5 @@ int main(int argc, char **argv)
         head = head->next;
     }
     printf("%s\n",head);
-    // head = stack_a;
-    // while(head)
-    // {
-    //     printf("%d\n", head->data);  
-    //     head = head->next;
-    // }
-
-    //printf("%s\n",head);
+    
 }
