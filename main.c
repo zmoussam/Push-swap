@@ -20,17 +20,21 @@ int main(int argc, char **argv)
     s_stack *head;
     if(argc > 1)
     {
-        arg_isdigit(argv, argc);
+        argIsdigit(argv, argc);
         stack_a = empiler(argv, argc);
-        is_repeat(stack_a);
+        isRepeat(stack_a);
+        if(checkIsSort(stack_a))
+            exit(0);
+        if(ft_lstsize(stack_a) <= 3)
+            sortShortList(stack_a, stack_b, ft_lstsize(stack_a));
+
     }
-    rrr(&stack_a, &stack_b);
     head = stack_a;
     while(head)
     {
         printf("%d\n", head->data); 
         head = head->next;
     }
-    printf("%s\n",head);
+ //  printf("%d\n",ft_lstsize(stack_a));
     
 }

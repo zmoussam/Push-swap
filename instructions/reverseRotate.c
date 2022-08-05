@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   reverseRotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:14 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/04 23:16:30 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/05 14:32:36 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-void reverse_rotate(s_stack **stack, char *inst)
+void reverseRotate(s_stack **stack, char *inst)
 {
     if(*stack)
     {
@@ -39,8 +39,8 @@ void reverse_rotate(s_stack **stack, char *inst)
 
 void rrr(s_stack **stack_a, s_stack **stack_b)
 {
-    reverse_rotate(stack_a, NULL);
-    reverse_rotate(stack_b, NULL);
+    reverseRotate(stack_a, NULL);
+    reverseRotate(stack_b, NULL);
     write(1, "rrr\n", 4);
 }
 

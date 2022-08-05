@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_argv.c                                       :+:      :+:    :+:   */
+/*   checkArg.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/03 17:39:47 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/05 14:35:44 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void print_error()
+void printError()
 {
     write(1, "error\n", 6);
     exit(1);
 }
 
-void arg_isdigit(char **argv, int argc)
+void argIsdigit(char **argv, int argc)
 {
     int i;
     int j;
@@ -33,14 +33,14 @@ void arg_isdigit(char **argv, int argc)
             if(!ft_isdigit(argv[i][j]) && argv[i][j] > 32 &&
             (argv[i][j] != '+' && argv[i][j] != '-'))
             {
-                print_error();
+                printError();
             }
             j++;
         }
         i--;
     }
 }
-void is_repeat(s_stack *stack_a)
+void isRepeat(s_stack *stack_a)
 {
     s_stack *head1;
     s_stack *head2;
@@ -62,7 +62,7 @@ void is_repeat(s_stack *stack_a)
                     continue;
                 }
                 if(head1->data == head2->data)
-                    print_error();
+                    printError();
                 j++;
                 head2 = head2->next;
             }

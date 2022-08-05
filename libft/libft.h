@@ -6,15 +6,15 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:47 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/03 17:33:09 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/05 15:04:42 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
 
-#include<stdlib.h>
 #include "../push_swap.h"
+#include<stdlib.h>
 
 int	ft_atoi(const char *str);
 int	ft_isdigit(int c);

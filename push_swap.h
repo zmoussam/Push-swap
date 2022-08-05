@@ -25,14 +25,17 @@ typedef struct t_stack{
 } s_stack;
 
 s_stack* empiler(char **argv,int argc);
-void arg_isdigit(char **argv,int argc);
-void print_error();
-void is_repeat(s_stack *stack_a);
+void argIsdigit(char **argv,int argc);
+void printError();
+void isRepeat(s_stack *stack_a);
 void swap(s_stack *list, char *inst);
 void ss(s_stack *stack_a, s_stack *stack_b);
 void push(s_stack **stack_dst, s_stack **stack_src, char *inst);
 void rotate(s_stack **stack, char *inst);
-void reverse_rotate(s_stack **stack, char *inst);
+void reverseRotate(s_stack **stack, char *inst);
 void rrr(s_stack **stack_a, s_stack **stack_b);
+int	ft_lstsize(s_stack *lst);
+void sortShortList(s_stack *stack_a, s_stack *stack_b, int size);
+short checkIsSort(s_stack *stack);
 
 #endif
