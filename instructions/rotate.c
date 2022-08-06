@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:18 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/05 18:21:44 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/06 18:16:34 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@ void rotate(s_stack **stack, char *inst)
 {
    if(*stack)
    {
+      int size;
       s_stack *tmp;
       s_stack *head;
+      
       tmp = *stack;
       head = *stack;
+      size = ft_lstsize(*stack);
       while(head)
       {
          if(head->next == NULL)
@@ -29,13 +32,23 @@ void rotate(s_stack **stack, char *inst)
             tmp->next = NULL;
             break;
          }
+         head->index -= 1;
          head = head->next;
       }
+      head->index -= 1;
+      head->next->index = size - 1;
+      if(!inst)
+         return;
       write(1, inst, 3);
    }
 }
 void rr(s_stack *stack_a, s_stack *stack_b)
 {
-    rotate(&stack_a, "ra\n");
-    rotate(&stack_b, "rb\n");
+    rotate(&stack_a, NULL);
+    rotate(&stack_b, NULL);
+    write(1, "rr\n", 3);
 }
+// void getNewIndex()
+// {
+   
+// }

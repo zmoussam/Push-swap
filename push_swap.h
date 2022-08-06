@@ -21,6 +21,7 @@
 
 typedef struct t_stack{
     int data;
+    int index;
     struct t_stack *next;
 } s_stack;
 
@@ -37,5 +38,7 @@ void rrr(s_stack **stack_a, s_stack **stack_b);
 int	ft_lstsize(s_stack *lst);
 void sortShortList(s_stack **stack_a, s_stack **stack_b, int size);
 short checkIsSort(s_stack *stack);
+void sortSize3(s_stack **stack_a);
+void getIndex(s_stack *stack);
 
 #endif

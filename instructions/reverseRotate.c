@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:14 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/06 12:35:01 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/06 18:21:52 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ void reverseRotate(s_stack **stack, char *inst)
                 *stack = tmp;
                 break;
             }
+            head->index += 1;
             head = head->next;
         }
+        head->index += 1;
+        (*stack)->index = 0;
         if(!inst)
             return;
         write(1, inst, 4);

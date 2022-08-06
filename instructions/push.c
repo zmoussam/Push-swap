@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:10 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/05 18:22:05 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/06 18:39:06 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@
         *stack_dst = tmp;
         if(!inst)
             return;
+        getIndex(*stack_dst);
+        getIndex(*stack_src);
+        
         write(1, inst, 3);
      }
  }
