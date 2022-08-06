@@ -26,15 +26,15 @@ int main(int argc, char **argv)
         if(checkIsSort(stack_a))
             exit(0);
         if(ft_lstsize(stack_a) <= 3)
-            sortShortList(stack_a, stack_b, ft_lstsize(stack_a));
+            sortShortList(&stack_a, &stack_b, ft_lstsize(stack_a));
 
     }
+    // swap(stack_a, "sa\n");
+    // reverseRotate(&stack_a, "rra\n");
     head = stack_a;
     while(head)
     {
         printf("%d\n", head->data); 
         head = head->next;
     }
- //  printf("%d\n",ft_lstsize(stack_a));
-    
 }

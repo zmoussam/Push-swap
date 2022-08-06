@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:47 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/05 15:04:42 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/05 20:49:49 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int	ft_atoi(const char *str);
 int	ft_isdigit(int c);
 char	**ft_split(char	const *s, char c);
 size_t	ft_strlen(const char *str);
+void	ft_swap(int *a, int *b);
 
 #endif

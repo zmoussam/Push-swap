@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 17:32:21 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/05 20:56:07 by zmoussam         ###   ########.fr       */
+/*   Created: 2022/08/05 20:49:16 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/08/05 20:49:34 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void swap(s_stack *stack, char *inst)
+void	ft_swap(int *a, int *b)
 {
-    if (stack && stack->next)
-    {
-        ft_swap(&stack->data, &stack->next->data);
-        if (!inst)
-            return ;
-        write(1, inst, 3);
-    }
+	int	swp ;
+
+	swp = *a ;
+	*a = *b ;
+	*b = swp ;
 }
-void ss(s_stack *stack_a, s_stack *stack_b)
-{
-    swap(stack_a, NULL);
-    swap(stack_b, NULL);
-    write(1, "ss\n", 3);
-}    
-    

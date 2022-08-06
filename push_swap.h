@@ -35,7 +35,7 @@ void rotate(s_stack **stack, char *inst);
 void reverseRotate(s_stack **stack, char *inst);
 void rrr(s_stack **stack_a, s_stack **stack_b);
 int	ft_lstsize(s_stack *lst);
-void sortShortList(s_stack *stack_a, s_stack *stack_b, int size);
+void sortShortList(s_stack **stack_a, s_stack **stack_b, int size);
 short checkIsSort(s_stack *stack);
 
 #endif
