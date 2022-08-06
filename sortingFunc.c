@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:30:33 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/06 17:12:25 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/06 19:11:58 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void sortSize3(s_stack **stack_a)
                 reverseRotate(stack_a, "rra\n");
             else
             {
-                swap((*stack_a), "sa\n");
+                swap(*stack_a, "sa\n");
                 rotate(stack_a, "ra\n");
             }
         } 

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/06 18:33:16 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/06 22:12:09 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,25 @@ void getIndex(s_stack *stack)
         head = head->next;
         index++;
     }
+}
+void getRange(s_stack *stack)
+{
+    int size;
+    int i;
+    s_stack *head;
+    int c = 1;
+    int location = 0;
     
+    size = ft_lstsize(stack);
+    i = 0;
+    head = stack;
+    while(head)
+    {
+        if (head->data < array[location])
+            location = c;
+        c++;
+    }
+
 }
 // int main(int argc, char **argv )
 // {

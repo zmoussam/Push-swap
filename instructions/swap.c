@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:21 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/05 20:56:07 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/06 21:34:52 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ void swap(s_stack *stack, char *inst)
     if (stack && stack->next)
     {
         ft_swap(&stack->data, &stack->next->data);
+        ft_swap(&stack->range, &stack->next->range);
         if (!inst)
-            return ;
+            return;
         write(1, inst, 3);
     }
 }

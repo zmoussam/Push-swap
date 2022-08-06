@@ -36,7 +36,7 @@ int main(int argc, char **argv)
     // reverseRotate(&stack_a, "rra\n");
     // reverseRotate(&stack_a, "rra\n");
     // reverseRotate(&stack_a, "rra\n");
-    // swap(stack_a, "sa\n");
+    swap(stack_a, "sa\n");
     // swap(stack_a, "sa\n");
     // reverseRotate(&stack_a, "rra\n");
     // rotate(&stack_a, "ra\n");
@@ -46,7 +46,9 @@ int main(int argc, char **argv)
     // rotate(&stack_a, "ra\n");
     // swap(stack_a, "sa\n");
     // swap(stack_a, "sa\n");
-    push(&stack_b, &stack_a, "pb\n");
+    // push(&stack_b, &stack_a, "pb\n");
+    // push(&stack_b, &stack_a, "pb\n");
+    // push(&stack_b, &stack_a, "pb\n");
     head = stack_a;
     while(head)
     {

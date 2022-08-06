@@ -22,6 +22,7 @@
 typedef struct t_stack{
     int data;
     int index;
+    int range;
     struct t_stack *next;
 } s_stack;
 
@@ -29,7 +30,7 @@ s_stack* empiler(char **argv,int argc);
 void argIsdigit(char **argv,int argc);
 void printError();
 void isRepeat(s_stack *stack_a);
-void swap(s_stack *list, char *inst);
+void swap(s_stack *stack, char *inst);
 void ss(s_stack *stack_a, s_stack *stack_b);
 void push(s_stack **stack_dst, s_stack **stack_src, char *inst);
 void rotate(s_stack **stack, char *inst);
@@ -40,5 +41,6 @@ void sortShortList(s_stack **stack_a, s_stack **stack_b, int size);
 short checkIsSort(s_stack *stack);
 void sortSize3(s_stack **stack_a);
 void getIndex(s_stack *stack);
+void	ft_swap(int *a, int  *b);
 
 #endif
