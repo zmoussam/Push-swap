@@ -23,6 +23,7 @@ typedef struct t_stack{
     int data;
     int index;
     int range;
+    int v;
     struct t_stack *next;
 } s_stack;
 
@@ -42,5 +43,6 @@ short checkIsSort(s_stack *stack);
 void sortSize3(s_stack **stack_a);
 void getIndex(s_stack *stack);
 void	ft_swap(int *a, int  *b);
+void getRange(s_stack *stack);
 
 #endif
