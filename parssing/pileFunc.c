@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/08 17:14:46 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:27:07 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void getIndex(s_stack *stack)
 }
 void getRange(s_stack *stack)
 {
-    int size;
     int i;
     s_stack *head;
     s_stack *head2;
@@ -69,14 +68,8 @@ void getRange(s_stack *stack)
 
     i = 0;
     tmp = stack;
-    size = ft_lstsize(stack);
-    while(head)
-    {
-        head->v = 0;
-        head->range = 0;
-        head = head->next;   
-    }
-    while(i < size)
+    initVAndRange(stack);
+    while(i < ft_lstsize(stack))
     {
             head = tmp;
             head2 = stack;
@@ -94,6 +87,18 @@ void getRange(s_stack *stack)
             }
             i++;
             head->v = 1;   
+    }
+}
+void initVAndRange(s_stack *stack)
+{
+    s_stack *head;
+    
+    head = stack;
+    while(head)
+    {
+        head->v = 0;
+        head->range = 0;
+        head = head->next;       
     }
 }
 // int main(int argc, char **argv )
