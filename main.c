@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     head = stack_a;
     while(head)
     {
-        printf("data = %d index = %d range = %d \n", head->data, head->index, head->range); 
+        printf("data = %d index = %d range = %d  v = %d\n", head->data, head->index, head->range , head->v); 
         head = head->next;
     }
 }

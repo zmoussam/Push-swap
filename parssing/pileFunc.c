@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/08 00:11:41 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:14:46 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ void getRange(s_stack *stack)
     int i;
     s_stack *head;
     s_stack *head2;
+    s_stack *tmp;
 
     i = 0;
-    head = stack;
-    head2 = stack;
+    tmp = stack;
     size = ft_lstsize(stack);
     while(head)
     {
@@ -78,8 +78,8 @@ void getRange(s_stack *stack)
     }
     while(i < size)
     {
-            head = stack;
-            head2 = stack->next;
+            head = tmp;
+            head2 = stack;
             head->range = i;
             while(head2)
             {
@@ -88,6 +88,8 @@ void getRange(s_stack *stack)
                     head2->range = i;
                     head = head2;
                 }
+                else if(head2->data > head->data)
+                    tmp = head2;
                 head2 = head2->next;
             }
             i++;
