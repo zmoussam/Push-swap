@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/08 17:27:07 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/08 18:08:10 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ s_stack* empiler(char **argv ,int argc)
             pile = new;
             j--;
         }
+        /* free sp */
         i--; 
     }
     getIndex(pile);
