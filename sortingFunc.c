@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:30:33 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/09 02:11:00 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/09 23:51:27 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,69 +50,7 @@ void sortShortList(s_stack **stack_a, s_stack **stack_b, int size)
         sortSize3(stack_a);
     else 
     { 
-            getRange(*stack_a);
-        while(head)
-        {
-            getIndex(*stack_a);
-           if(head->range == min)
-           {
-               min++;
-              //printf("range = %d head = %d\n", head->range, head->data);
-              size = ft_lstsize(*stack_a);
-              tmp2 = size / 2;
-              if(head->index >= tmp2)
-              {
-                    i = 0;
-                    tmp = size - head->index;
-                    while(i < tmp)
-                    {
-                        reverseRotate(stack_a, "rra\n");
-                        i++;
-                    }
-                    push(stack_b, stack_a, "pb\n");
-                    bolean = 1;
-              }
-               else if(head->index < tmp2)
-              {
-                  i = 0;
-                 x = head->index;
-                  while(i < x)
-                  {
-                      
-                  //printf("index = %d\n", head->index);
-                     rotate(stack_a, "ra\n");
-                     i++;                      
-                  }
-                  push(stack_b, stack_a, "pb\n");
-                  bolean = 1;
-              }
-           }
-           if(bolean == 1)
-           {
-            head = *stack_a;
-            bolean = 0;  
-           }
-            else
-            {
-             head = head->next;
-             bolean = 0; 
-                
-            }
-           if(ft_lstsize(*stack_a) == 3)
-           {
-               if(!checkIsSort(*stack_a))
-                    sortSize3(stack_a);
-               i = 0;
-               tmp = size2 - 3;
-               while(i < tmp)
-               {
-                   push(stack_a, stack_b, "pa\n");
-                   i++;
-               }
-                break;
-           }
-        } 
-    }
+    {
     
 }
 void sortSize3(s_stack **stack_a)
