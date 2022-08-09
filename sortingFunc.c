@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:30:33 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/09 00:00:09 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/09 02:11:00 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void sortShortList(s_stack **stack_a, s_stack **stack_b, int size)
     int tmp2;
     short bolean;
     int size2;
+    int x;
     size2 = size;
     
     bolean = 0;
@@ -49,13 +50,14 @@ void sortShortList(s_stack **stack_a, s_stack **stack_b, int size)
         sortSize3(stack_a);
     else 
     { 
+            getRange(*stack_a);
         while(head)
         {
-            getRange(*stack_a);
             getIndex(*stack_a);
            if(head->range == min)
            {
-              min++;
+               min++;
+              //printf("range = %d head = %d\n", head->range, head->data);
               size = ft_lstsize(*stack_a);
               tmp2 = size / 2;
               if(head->index >= tmp2)
@@ -70,11 +72,14 @@ void sortShortList(s_stack **stack_a, s_stack **stack_b, int size)
                     push(stack_b, stack_a, "pb\n");
                     bolean = 1;
               }
-              else
+               else if(head->index < tmp2)
               {
                   i = 0;
-                  while(i < head->index)
+                 x = head->index;
+                  while(i < x)
                   {
+                      
+                  //printf("index = %d\n", head->index);
                      rotate(stack_a, "ra\n");
                      i++;                      
                   }
@@ -85,18 +90,16 @@ void sortShortList(s_stack **stack_a, s_stack **stack_b, int size)
            if(bolean == 1)
            {
             head = *stack_a;
-            //getIndex(*stack_a);
             bolean = 0;  
            }
             else
             {
              head = head->next;
-             //bolean = 0; 
+             bolean = 0; 
                 
             }
            if(ft_lstsize(*stack_a) == 3)
            {
-               //printf("size = %d", ft_lstsize(*stack_a));
                if(!checkIsSort(*stack_a))
                     sortSize3(stack_a);
                i = 0;
