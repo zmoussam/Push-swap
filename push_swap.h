@@ -45,5 +45,7 @@ void getIndex(s_stack *stack);
 void	ft_swap(int *a, int  *b);
 void getRange(s_stack *stack);
 void initVAndRange(s_stack *stack);
+void sortSize4(s_stack **stack_a, s_stack **stack_b);
+void sortSize5(s_stack **stack_a, s_stack **stack_b);
 
 #endif

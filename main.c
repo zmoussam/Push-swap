@@ -30,7 +30,9 @@ int main(int argc, char **argv)
         isRepeat(stack_a);
         if(checkIsSort(stack_a))
             exit(0);
-       sortShortList(&stack_a, &stack_b, ft_lstsize(stack_a));
+        // getRange(stack_a);
+        if(ft_lstsize(stack_a) <= 5)
+            sortShortList(&stack_a, &stack_b, ft_lstsize(stack_a));
     }
     // swap(stack_a, "sa\n");
     // push(&stack_b, &stack_a, "pb\n");
@@ -40,7 +42,6 @@ int main(int argc, char **argv)
     // push(&stack_a, &stack_b, "pa\n");
     // push(&stack_a, &stack_b, "pa\n");
     // push(&stack_a, &stack_b, "pa\n");
-     getRange(stack_a);
     // reverseRotate(&stack_a, "rra\n");
     // reverseRotate(&stack_a, "rra\n");
     // reverseRotate(&stack_a, "rra\n");
@@ -57,10 +58,10 @@ int main(int argc, char **argv)
     // rotate(&stack_a, "ra\n");
     // rotate(&stack_a, "ra\n");
     // rotate(&stack_a, "ra\n");
-    //  head = stack_a;
-    // while(head)
-    // {
-    //     printf("data = %d  index = %d range = %d \n", head->data,head->index, head->range); 
-    //     head = head->next;
-    // }
+     head = stack_a;
+    while(head)
+    {
+        printf("data = %d  index = %d range = %d \n", head->data,head->index, head->range); 
+        head = head->next;
+    }
 }

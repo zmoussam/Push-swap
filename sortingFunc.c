@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:30:33 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/09 23:51:27 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/10 20:04:39 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,8 @@ short checkIsSort(s_stack *stack)
     return (1);
 }
 void sortShortList(s_stack **stack_a, s_stack **stack_b, int size)
-{
-    int min;
-    s_stack *head;
-    int i;
-    int tmp;
-    int tmp2;
-    short bolean;
-    int size2;
-    int x;
-    size2 = size;
-    
-    bolean = 0;
-    head = *stack_a;
-    min = 0;   
+{   
+    getRange(*stack_a);
     if(size == 1)
         exit(0);
     else if(size == 2)
@@ -48,9 +36,10 @@ void sortShortList(s_stack **stack_a, s_stack **stack_b, int size)
     }
     else if(size == 3)
         sortSize3(stack_a);
+    else if(size == 4)
+        sortSize4(stack_a, stack_b);
     else 
-    { 
-    {
+        sortSize5(stack_a, stack_b);
     
 }
 void sortSize3(s_stack **stack_a)
@@ -74,4 +63,76 @@ void sortSize3(s_stack **stack_a)
         swap(*stack_a, "sa\n");
         reverseRotate(stack_a, "rra\n");
     }
+}
+void sortSize4(s_stack **stack_a, s_stack **stack_b)
+{
+    s_stack *head;
+    int i;
+    
+    head = *stack_a;
+    i = 3;
+    getRange(*stack_a);
+    while(head)
+    {
+        if(head->range == 0)
+        {
+            int index;
+            index = head->index;
+            if(head->index == 3)
+            {
+                reverseRotate(stack_a, "rra\n");
+                if(checkIsSort(*stack_a))
+                    break;
+            }
+            else
+                while(i++ < index)
+                  rotate(stack_a, "ra\n");
+            if(checkIsSort(*stack_a))
+                break;
+            push(stack_b, stack_a, "pb\n");
+            sortSize3(stack_a);
+            push(stack_a, stack_b, "pa\n");
+            break;
+        } 
+        head = head->next;
+    }
+}
+void sortSize5(s_stack **stack_a, s_stack **stack_b)
+{
+    s_stack *head;
+    int i;
+    head = *stack_a;
+    i = 0;
+    getRange(*stack_a);
+    while(head)
+    {
+        if(head->range == 0)
+        {
+            int index;
+            index = head->index;
+            if(index > 2)
+            {
+                while (i++ < 5 - index)
+                    reverseRotate(stack_a, "rra\n");
+                if(checkIsSort(*stack_a))
+                    return;
+                push(stack_b, stack_a, "pb\n");
+                sortSize4(stack_a, stack_b);
+                push(stack_a, stack_b, "pa\n");
+                return;        
+            }
+            else 
+            {
+                while(i++ < index)
+                    rotate(stack_a, "ra\n");
+                if(checkIsSort(*stack_a))
+                    return;
+                push(stack_b, stack_a, "pb\n");
+                sortSize4(stack_a, stack_b);
+                push(stack_a, stack_b, "pa\n");
+                return; 
+            }
+        }
+        head = head->next;
+    }   
 }
