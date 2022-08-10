@@ -30,7 +30,7 @@ int main(int argc, char **argv)
         isRepeat(stack_a);
         if(checkIsSort(stack_a))
             exit(0);
-        // getRange(stack_a);
+        getRange(stack_a);
         if(ft_lstsize(stack_a) <= 5)
             sortShortList(&stack_a, &stack_b, ft_lstsize(stack_a));
     }

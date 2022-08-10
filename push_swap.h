@@ -23,6 +23,7 @@ typedef struct t_stack{
     int data;
     int index;
     int range;
+    char *binary;
     int v;
     struct t_stack *next;
 } s_stack;
