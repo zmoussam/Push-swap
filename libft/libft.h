@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:47 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/09 21:18:01 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/11 00:35:34 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_atoi(const char *str);
 int	ft_isdigit(int c);
 char	**ft_split(char	const *s, char c);
 size_t	ft_strlen(const char *str);
-// void	ft_swap(s_stack **a, s_stack **b);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strdup(char *s1, int max_bit);
 
 #endif
