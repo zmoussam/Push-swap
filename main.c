@@ -90,14 +90,14 @@ int main(int argc, char **argv)
         else
             radixSort(&stack_a, &stack_b);
     }
-    //head = stack_a;
-    //head2 = stack_b;
+    // head = stack_a;
+    // head2 = stack_b;
     // while(head)
     // {
     //     printf("data = %d  index = %d range = %d binaryRange = %c\n", head->data,head->index, head->range, head->binary[0]); 
     //     head = head->next;
     // }
-    // while(head2)
+    // // while(head2)
     // {
     //     printf("data2 = %d  index2 = %d range2 = %d binaryRange2 = %s\n", head2->data,head2->index, head2->range, head2->binary); 
     //     head2 = head2->next;
