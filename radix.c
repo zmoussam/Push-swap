@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:12:21 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/11 20:38:48 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/11 21:10:08 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void radixSort(s_stack **stack_a, s_stack **stack_b)
    size_a = 0;
    head = *stack_a;
    max_bit = getBinaryOfRange(*stack_a);
-   i = max_bit;
+   i = max_bit - 1;
    while(i >= 0)
    {
        size_a = ft_lstsize(*stack_a) + 1;
@@ -54,7 +54,13 @@ void radixSort(s_stack **stack_a, s_stack **stack_b)
        size_b = ft_lstsize(*stack_b);
        j = 0;
         while(j++ < size_b)
-            push(stack_a, stack_b, "pa\n");
+        {
+            if((*stack_b)->binary[i - 1] == '0' && i != 0)
+                rotate(stack_b, "rb\n");
+            else
+                push(stack_a, stack_b, "pa\n");
+            
+        }
         i--;
    }
 }
