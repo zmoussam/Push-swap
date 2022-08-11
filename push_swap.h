@@ -49,5 +49,8 @@ void initVAndRange(s_stack *stack);
 void sortSize4(s_stack **stack_a, s_stack **stack_b);
 void sortSize5(s_stack **stack_a, s_stack **stack_b);
 char	*rangeToBinary(void *buf);
+void radixSort(s_stack **stack_a, s_stack **stack_b);
+int getBinaryOfRange(s_stack *stack_a);
+int checkIfZeroexist(s_stack *stack, int i);
 
 #endif

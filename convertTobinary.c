@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 00:30:59 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/11 00:34:07 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/11 16:34:33 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,27 @@ char	*rangeToBinary(void *buf)
 {
 	char	*ptr;
     char *str;
-	short   i;
+	int   i;
     int     k;
     
     k = 0;
     ptr = (char *)buf;
-	short	j;
+    i = 3;
+	int	j;
     str = (char *)malloc(sizeof(char) * 32 + 1);
-	for (i = 3; i >= 0; i--)
+	while( i >= 0)
 	{
-		for (j = 7; j >= 0; j--)
+        j = 7;
+		while (j >= 0)
 		{
 			if((ptr[i] >> j) & 1)
                 str[k] = '1';
             else 
                 str[k] = '0';
             k++;
+            j--;
 		}
+        i--;
 	}
     return (str);
 }

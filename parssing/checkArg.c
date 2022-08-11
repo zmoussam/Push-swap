@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/05 14:35:44 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/11 15:01:23 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ void argIsdigit(char **argv, int argc)
         {
             if(!ft_isdigit(argv[i][j]) && argv[i][j] > 32 &&
             (argv[i][j] != '+' && argv[i][j] != '-'))
-            {
                 printError();
-            }
             j++;
         }
         i--;
