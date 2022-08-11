@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:10 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/06 18:39:06 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/11 01:45:57 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,27 @@
 //     three2 = malloc(sizeof(s_stack));
 //     one->data = 1;
 //     one->next = two;
-//     printf("%s\n","hi");
+//     //printf("%s\n","hi");
 //     two->data = 2;
 //     two->next = three;
 //     three->data = 3;
 //     three->next = NULL;
-//     one2->data = 0;
-//     one2->next = two2;
-//     two2->data = 2;
-//     two2->next = three2;
-//     three2->data = 3;
-//     three2->next = NULL;
-//     push(&one, &one2);
-//     head = one;
-//     while(head)
-//     {
-//         printf("%d\n", head->data);  
-//         head = head->next;
-//     }
+//     // one2->data = 0;
+//     // one2->next = NULL;
+//     // two2->data = 2;
+//     // two2->next = three2;
+//     // three2->data = 3;
+//     // three2->next = NULL;
+//     //push(&one, &one2, "pa\n");
+//     // push(&one, &one2, "pa\n");
+//     push(&one2, &one, "pb\n");
+//     push(&one2, &one, "pb\n");
+//     // head = one;
+//     // while(head)
+//     // {
+//     //     printf("%d\n", head->data);  
+//     //     head = head->next;
+//     // }
 //     head = one2;
 //      while(head)
 //     {
@@ -72,4 +75,4 @@
 //         head = head->next;
 //     }
      
-//  }
+// }
