@@ -1,54 +1,66 @@
 #include<stdio.h>
 #include<stdlib.h>
-typedef struct Element Element;
-struct Element
-{
-    int nombre;
-    Element *suivant;
-};
+#include "../push_swap.h"
 
-typedef struct Pile Pile;
-struct Pile
-{
-    Element *premier;
-};
-void empiler(Pile *pile, int nvNombre)
-{
-    Element *nouveau = malloc(sizeof(*nouveau));
-    if (pile == NULL || nouveau == NULL)
-    {
-        exit(1);
-    }
 
-    nouveau->nombre = nvNombre;
-    nouveau->suivant = pile->premier;
-    pile->premier = nouveau;
-}
-void afficherPile(Pile *pile)
-{
-    if (pile == NULL)
-    {
-        exit(1);
-    }
-    Element *actuel = pile->premier;
-
-    while (actuel != NULL)
-    {
-        printf("%d\n", actuel->nombre);
-        actuel = actuel->suivant;
-    }
-    printf("\n");
-}
 int main()
 {
-    Pile *stack_a;
-    stack_a->premier->nombre = 1;
-    stack_a->premier->suivant = NULL;
-    int i = 0;
-    while(i < 5)
-    {
-        empiler(stack_a,i);
-        i++;
+    s_stack *head1;
+    s_stack *head2;
+    s_stack *head3;
+    s_stack *head4;
+    s_stack *headd1;
+    s_stack *headd2;
+    s_stack *headd3;
+    s_stack *headd4;
+    s_stack *tmp;
+    s_stack *tmpp;
+    
+    head1 = (s_stack *)malloc(sizeof(s_stack));
+    head2 = (s_stack *)malloc(sizeof(s_stack));
+    head3 = (s_stack *)malloc(sizeof(s_stack));
+    head4 = (s_stack *)malloc(sizeof(s_stack));
+    headd1 = (s_stack *)malloc(sizeof(s_stack));
+    headd2 = (s_stack *)malloc(sizeof(s_stack));
+    headd3 = (s_stack *)malloc(sizeof(s_stack));
+    headd4 = (s_stack *)malloc(sizeof(s_stack));
+
+    head1->data = 1;
+    head2->data = 2;
+    head3->data = 3;
+    head4->data = 4;
+
+    headd1->data = 1;
+    headd2->data = 2;
+    headd3->data = 3;
+    headd4->data = 4;
+
+    head1->next = head2;
+    head2->next = head3;
+    head3->next = head4;
+    head4->next = NULL;
+
+    headd1->next = headd2;
+    headd2->next = headd3;
+    headd3->next = headd4;
+    headd4->next = NULL;
+
+    rr(&head1, &headd1);
+    rr(&head1, &headd1);
+    rr(&head1, &headd1);
+    tmp = head1;
+    tmpp = headd1;
+    printf("(1) -- >");
+    while(tmp)
+    {   
+        printf("  %d", tmp->data);
+        tmp = tmp->next;
     }
-    afficherPile(stack_a);
+    printf("%s","\n");
+    printf("(2) -- >");
+    while(tmpp)
+    {
+        printf("  %d", tmpp->data);
+        tmpp = tmpp->next;
+    }
 }

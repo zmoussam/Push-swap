@@ -52,5 +52,7 @@ char	*rangeToBinary(void *buf);
 void radixSort(s_stack **stack_a, s_stack **stack_b);
 int getBinaryOfRange(s_stack *stack_a);
 int checkIfZeroexist(s_stack *stack, int i);
+void radixSort2(s_stack **stack_a, s_stack **stack_b);
+void rr(s_stack **stack_a, s_stack **stack_b);
 
 #endif

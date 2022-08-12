@@ -30,7 +30,7 @@ int main(int argc, char **argv)
         if(ft_lstsize(stack_a) <= 5)
             sortShortList(&stack_a, &stack_b, ft_lstsize(stack_a));
         else
-            radixSort(&stack_a, &stack_b);
+            radixSort2(&stack_a, &stack_b);
     }
     // head = stack_a;
     // while(head)
