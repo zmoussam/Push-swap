@@ -6,39 +6,40 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 17:31:28 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/05 14:33:44 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/13 16:17:58 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void countSign(const char *str)
+void	count_sign(const char *str)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
-	while(str[i])
+	while (str[i])
 	{
-		if(str[i] == '+' || str[i] == '-')
+		if (str[i] == '+' || str[i] == '-')
 			count++;
 		i++;
 	}
-	if(count > 1)
-		printError();
+	if (count > 1)
+		print_error();
 }
-static void	checkNbr(unsigned long nbr, int signe)
+
+static void	check_nbr(unsigned long nbr, int signe)
 {
 	if (signe == -1)
 	{
-		if(nbr > 2147483648)
-			printError();
+		if (nbr > 2147483648)
+			print_error();
 	}
 	else
 	{
-		if(nbr > 2147483647)
-			printError();
+		if (nbr > 2147483647)
+			print_error();
 	}
 }
 
@@ -51,7 +52,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	nombre = 0;
 	signe = 1;
-	countSign(str);
+	count_sign(str);
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
@@ -66,6 +67,6 @@ int	ft_atoi(const char *str)
 		nombre = nombre + (int)(str[i] - '0');
 		i++;
 	}
-	checkNbr(nombre, signe);
+	check_nbr(nombre, signe);
 	return (nombre * signe);
 }

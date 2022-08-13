@@ -6,14 +6,13 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:24:57 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/05 14:58:48 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/13 18:32:50 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int	ft_lstsize(s_stack *lst)
+int	ft_lstsize(t_stack *lst)
 {
 	int	n;
 

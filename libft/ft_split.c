@@ -6,13 +6,13 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:37 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/07/28 17:32:37 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/13 15:42:12 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	sizeofWords(char const	*word, char c)
+static int	size_of_words(char const	*word, char c)
 {
 	int	i;
 	int	size;
@@ -29,7 +29,7 @@ static int	sizeofWords(char const	*word, char c)
 	return (size);
 }
 
-static int	countWords(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -75,15 +75,15 @@ char	**ft_split(char	const *s, char c)
 
 	if (!s)
 		return (NULL);
-	new = (char **)malloc((countWords(s, c) + 1) * sizeof(char *));
+	new = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!new)
 		return (NULL);
-	a = 0; 
+	a = 0;
 	i = 0;
-	while (a < countWords(s, c))
+	while (a < count_words(s, c))
 	{
 		b = 0;
-		new[a] = malloc(sizeofWords(&s[i], c) + 1);
+		new[a] = malloc(size_of_words(&s[i], c) + 1);
 		if (!new[a])
 			return (ft_free(a, new));
 		i = ft_getindex(i, c, s);
@@ -93,4 +93,4 @@ char	**ft_split(char	const *s, char c)
 	}
 	new[a] = NULL;
 	return (new);
-	}
+}
