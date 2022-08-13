@@ -16,8 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	t_stack	*head;
-	t_stack	*head2;
 
 	if (argc > 1)
 	{

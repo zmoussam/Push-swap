@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   push_swap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 17:32:47 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/13 23:52:04 by zmoussam         ###   ########.fr       */
+/*   Created: 2022/08/13 23:41:49 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/08/13 23:43:39 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "push_swap_bonus.h"
 
-//# include "../push_swap.h"
-# include<stdlib.h>
+int	main(int argc, char **argv)
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
-int		ft_atoi(const char *str);
-int		ft_isdigit(int c);
-char	**ft_split(char	const *s, char c);
-size_t	ft_strlen(const char *str);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strdup(char *s1, int max_bit);
-
-#endif
+	if (argc > 1)
+	{
+		arg_isdigit(argv, argc);
+		stack_a = empiler(argv, argc);
+		is_repeat(stack_a);
+		if (check_is_sort(stack_a))
+			exit(0);
+	}
+}
