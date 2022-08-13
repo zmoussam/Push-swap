@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:12:21 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/13 22:03:38 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/13 22:51:18 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,12 @@ int	get_binary_of_range(t_stack *stack_a)
 	return (max_bit);
 }
 
-int	check_if_one_exist(t_stack *stack, int i)
-{
-	t_stack	*head;
-
-	head = stack;
-	while (head)
-	{
-		if (head->binary[i-1] == '1')
-			return (1);
-		head = head->next;
-	}
-	return (0);
-}
-
 void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
 	int		j;
 	int		size_b;
 	int		size_a;
-	int k;
-	int x;
 
 	size_a = 0;
 	i = get_binary_of_range(*stack_a) - 1;
@@ -73,7 +57,6 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 					}
 				}
 				push(stack_b, stack_a, "pb\n");
-				
 			}
 			else
 				rotate(stack_a, "ra\n");
@@ -84,10 +67,9 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 		{
 			if ((*stack_b)->binary[i - 1] == '0' && i != 0)
 				rotate(stack_b, "rb\n");
-			else 
+			else
 			{
-					push(stack_a, stack_b, "pa\n");
-			
+				push(stack_a, stack_b, "pa\n");
 			}
 		}
 		i--;

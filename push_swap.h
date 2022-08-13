@@ -51,7 +51,6 @@ void	sort_size5(t_stack **stack_a, t_stack **stack_b);
 char	*range_to_binary(void *buf);
 void	radix_sort(t_stack **stack_a, t_stack **stack_b);
 int		get_binary_of_range(t_stack *stack_a);
-int		check_if_zero_exist(t_stack *stack, int i);
 void	rr(t_stack **stack_a, t_stack **stack_b);
 
 #endif
