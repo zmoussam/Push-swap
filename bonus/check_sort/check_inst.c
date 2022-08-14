@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   check_inst.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 18:01:50 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 18:02:18 by zmoussam         ###   ########.fr       */
+/*   Created: 2022/08/14 20:14:12 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/08/14 20:16:27 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+# include "../push_swap_bonus.h"
 
-char	*ft_strdup(const char *s1)
+void check_inst(char *inst)
 {
-	char	*copy;
-	int		size;
-	int		j;
-
-	size = 0;
-	while (s1[size])
-		size++;
-	copy = (char *)malloc((size + 1) * sizeof(char));
-	if (copy == NULL)
-		return (copy);
-	j = 0;
-	while (s1[j])
-	{
-		copy[j] = s1[j];
-		j++;
-	}
-	copy[j] = '\0';
-	return (copy);
+	if(ft_strcmp(inst, "sa\n") && ft_strcmp(inst, "sb\n")
+	 && ft_strcmp(inst, "ss\n") && ft_strcmp(inst, "ra\n") \
+	 && ft_strcmp(inst, "rb\n") && ft_strcmp(inst, "rr\n") \
+	 && ft_strcmp(inst, "rra\n") && ft_strcmp(inst, "rrb\n") \
+	 && ft_strcmp(inst, "rrr\n") && ft_strcmp(inst, "pa\n") \
+	 && ft_strcmp(inst, "pb\n"))
+	 print_error();
 }

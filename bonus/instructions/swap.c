@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 18:01:50 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 18:02:18 by zmoussam         ###   ########.fr       */
+/*   Created: 2022/07/28 17:32:21 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/08/14 19:51:04 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap_bonus.h"
 
-char	*ft_strdup(const char *s1)
+void	swap(t_stack_b *stack)
 {
-	char	*copy;
-	int		size;
-	int		j;
+	if (stack && stack->next)
+		ft_swap(&stack->data, &stack->next->data);
+}
 
-	size = 0;
-	while (s1[size])
-		size++;
-	copy = (char *)malloc((size + 1) * sizeof(char));
-	if (copy == NULL)
-		return (copy);
-	j = 0;
-	while (s1[j])
-	{
-		copy[j] = s1[j];
-		j++;
-	}
-	copy[j] = '\0';
-	return (copy);
+void	ss(t_stack_b *stack_a, t_stack_b *stack_b)
+{
+	swap(stack_a);
+	swap(stack_b);
 }

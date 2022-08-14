@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 18:01:50 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 18:02:18 by zmoussam         ###   ########.fr       */
+/*   Created: 2022/07/28 17:32:10 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/08/14 20:05:23 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap_bonus.h"
 
-char	*ft_strdup(const char *s1)
+void	push(t_stack_b **stack_dst, t_stack_b **stack_src)
 {
-	char	*copy;
-	int		size;
-	int		j;
+	t_stack_b	*tmp;
 
-	size = 0;
-	while (s1[size])
-		size++;
-	copy = (char *)malloc((size + 1) * sizeof(char));
-	if (copy == NULL)
-		return (copy);
-	j = 0;
-	while (s1[j])
+	if (*stack_src)
 	{
-		copy[j] = s1[j];
-		j++;
+		tmp = *stack_src;
+		*stack_src = tmp->next;
+		tmp->next = *stack_dst;
+		*stack_dst = tmp;
 	}
-	copy[j] = '\0';
-	return (copy);
 }

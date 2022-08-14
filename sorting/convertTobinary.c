@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 00:30:59 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/13 22:51:42 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/14 20:06:47 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,3 @@ char	*range_to_binary(void *buf)
 	}
 	return (str);
 }
-// int main()
-// {
-//     int size = 0;
-//     long max = 700;
-//     size = ft_strlen(ft_strchr(rangeToBinary(&max), '1'));
-//     printf("size = %d\n", size);
-//     int x = 700;
-//     int y = 800;
-//     int z = 900;
-//     printf("%s\n", ft_strdup(rangeToBinary(&x), size));
-//     printf("%s\n", ft_strdup(rangeToBinary(&y), size));
-//     printf("%s\n", ft_strdup(rangeToBinary(&z), size));
-// }

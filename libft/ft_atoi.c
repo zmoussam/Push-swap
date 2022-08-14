@@ -6,11 +6,16 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 17:31:28 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/13 16:17:58 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/14 20:11:04 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+static void	print_error(void)
+{
+	write(1, "error\n", 6);
+	exit(1);
+}
 
 void	count_sign(const char *str)
 {
@@ -21,7 +26,9 @@ void	count_sign(const char *str)
 	count = 0;
 	while (str[i])
 	{
-		if (str[i] == '+' || str[i] == '-')
+		if((str[i] == '-' || str[i] == '+') && !ft_isdigit(str[i + 1]))
+			print_error();
+		if ((str[i] == '+' || str[i] == '-'))
 			count++;
 		i++;
 	}

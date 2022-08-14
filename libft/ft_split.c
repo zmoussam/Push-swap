@@ -55,7 +55,7 @@ static int	ft_getindex(int i, char c, const char *s)
 	return (i);
 }
 
-static char	**ft_free(int a, char **new)
+char	**ft_free(int a, char **new)
 {
 	while (a > 0)
 	{

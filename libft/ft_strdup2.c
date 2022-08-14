@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strdup2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 18:01:50 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 18:02:18 by zmoussam         ###   ########.fr       */
+/*   Created: 2022/08/11 00:31:29 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/08/14 17:36:22 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup2(char *s1, int max_bit)
 {
 	char	*copy;
-	int		size;
 	int		j;
+	int		i;
 
-	size = 0;
-	while (s1[size])
-		size++;
-	copy = (char *)malloc((size + 1) * sizeof(char));
-	if (copy == NULL)
+	copy = (char *)malloc((max_bit + 1) * sizeof(char));
+	if (!copy)
 		return (copy);
 	j = 0;
+	i = 0;
+	while (j < 32 - max_bit)
+		j++;
 	while (s1[j])
 	{
-		copy[j] = s1[j];
+		copy[i] = s1[j];
+		i++;
 		j++;
 	}
-	copy[j] = '\0';
+	copy[i] = '\0';
+	free(s1);
 	return (copy);
 }

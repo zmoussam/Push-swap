@@ -6,19 +6,19 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/13 23:53:11 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/14 20:07:40 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-t_stack	*empiler(char **argv, int argc)
+t_stack_b	*empiler(char **argv, int argc)
 {
 	int		i;
 	int		j;
 	void	*pile;
 	char	**sp;
-	t_stack	*new;
+	t_stack_b	*new;
 
 	pile = NULL;
 	j = 0;
@@ -32,7 +32,7 @@ t_stack	*empiler(char **argv, int argc)
 		j--;
 		while (j >= 0)
 		{
-			new = (t_stack *)malloc(sizeof(t_stack));
+			new = (t_stack_b *)malloc(sizeof(t_stack_b));
 			new->data = ft_atoi(sp[j]);
 			new->next = pile;
 			pile = new;
@@ -42,19 +42,16 @@ t_stack	*empiler(char **argv, int argc)
 	}
 	return (pile);
 }
-// int main(int argc, char **argv )
-// {
-//     s_stack *stack;
-//     s_stack *head;
-//      stack = (s_stack*)malloc(sizeof(s_stack));
-//      stack = NULL;
-//      stack = empiler(stack, argv, argc);   
-//      stack = empiler(stack, argv, argc);   
-//     head = stack;
-//     while(head)
-//     {
-//         printf("%d\n", head->data);  
-//         head = head->next;
-//     }
-//      printf("%s\n",head); 
-// }
+short	check_is_sort(t_stack_b *stack)
+{
+	t_stack_b	*head;
+
+	head = stack;
+	while (head && head->next)
+	{
+		if (head->data > head->next->data)
+			return (0);
+		head = head->next;
+	}
+	return (1);
+}

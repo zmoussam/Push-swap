@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/13 23:53:22 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/14 19:57:34 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	arg_isdigit(char **argv, int argc)
 	}
 }
 
-void	is_repeat(t_stack *stack_a)
+void	is_repeat(t_stack_b *stack_a)
 {
-	t_stack	*head1;
-	t_stack	*head2;
+	t_stack_b	*head1;
+	t_stack_b	*head2;
 	int		i;
 	int		j;
 
