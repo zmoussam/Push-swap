@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 23:48:17 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 20:16:40 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/14 21:09:36 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include "../libft/libft.h"
 # include "./get_next_line/get_next_line.h"
+# include <unistd.h>
 
 typedef struct s_stack{
 	int				data;
@@ -30,13 +31,14 @@ void		rr(t_stack_b **stack_a, t_stack_b **stack_b);
 void		swap(t_stack_b *stack);
 void		ss(t_stack_b *stack_a, t_stack_b *stack_b);
 void		check_inst(char *inst);
-void		print_error(void);
+// void		print_error(void);
 void		arg_isdigit(char **argv, int argc);
 void		is_repeat(t_stack_b *stack_a);
 t_stack_b	*empiler(char **argv, int argc);
 short		check_is_sort(t_stack_b *stack);
 void		do_inst(t_stack_b **stack_a, t_stack_b **stack_b, char *inst);
 void		check_inst(char *inst);
+int			ft_lstsize(t_stack_b *lst);
 
 # include<stdio.h>
 

@@ -6,14 +6,17 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:47 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 20:11:13 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/14 21:08:50 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include<stdlib.h>
+#include<stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+//# include "../push_swap.h"
 
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
@@ -26,6 +29,6 @@ int     ft_strcmp(char *s1, char *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s1);
 char	*ft_strjoin(char *s1, char const *s2);
-
+void	ft_swap(int *a, int *b);
 
 #endif

@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 14:24:57 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 13:01:53 by zmoussam         ###   ########.fr       */
+/*   Created: 2022/07/28 17:32:21 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/08/13 18:28:35 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_lstsize(t_stack *lst)
+void	swap(t_stack *stack, char *inst)
 {
-	int	n;
-
-	n = 0;
-	while (lst)
+	if (stack && stack->next)
 	{
-		lst = lst->next;
-		n++;
+		ft_swap(&stack->data, &stack->next->data);
+		ft_swap(&stack->range, &stack->next->range);
+		if (!inst)
+			return ;
+		write(1, inst, 3);
 	}
-	return (n);
+}
+
+void	ss(t_stack *stack_a, t_stack *stack_b)
+{
+	swap(stack_a, NULL);
+	swap(stack_b, NULL);
+	write(1, "ss\n", 3);
 }

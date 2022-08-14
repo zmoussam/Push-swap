@@ -6,11 +6,11 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 21:10:44 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/14 21:16:42 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap_bonus.h"
+#include "../push_swap.h"
 
 void	arg_isdigit(char **argv, int argc)
 {
@@ -33,10 +33,10 @@ void	arg_isdigit(char **argv, int argc)
 	}
 }
 
-void	is_repeat(t_stack_b *stack_a)
+void	is_repeat(t_stack *stack_a)
 {
-	t_stack_b	*head1;
-	t_stack_b	*head2;
+	t_stack	*head1;
+	t_stack	*head2;
 	int		i;
 	int		j;
 
