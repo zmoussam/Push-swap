@@ -6,10 +6,9 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 18:03:18 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 18:47:05 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 00:31:39 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H

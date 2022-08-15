@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 20:25:09 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 00:50:33 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ void	init_v_and_range(t_stack *stack)
 		head = head->next;
 	}
 }
+
 int	ft_lstsize(t_stack *lst)
 {
 	int	n;
@@ -114,19 +115,3 @@ int	ft_lstsize(t_stack *lst)
 	}
 	return (n);
 }
-// int main(int argc, char **argv )
-// {
-//     s_stack *stack;
-//     s_stack *head;
-//      stack = (s_stack*)malloc(sizeof(s_stack));
-//      stack = NULL;
-//      stack = empiler(stack, argv, argc);   
-//      stack = empiler(stack, argv, argc);   
-//     head = stack;
-//     while(head)
-//     {
-//         printf("%d\n", head->data);  
-//         head = head->next;
-//     }
-//      printf("%s\n",head); 
-// }

@@ -6,7 +6,7 @@
 #    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/14 21:27:40 by zmoussam          #+#    #+#              #
-#    Updated: 2022/08/14 22:36:01 by zmoussam         ###   ########.fr        #
+#    Updated: 2022/08/14 23:03:43 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,16 +46,20 @@ CFLAGS =  -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):$(OBJ) ./mandatory/push_swap.h ./libft/libft.h
+%.o:%.c *.h
+	@$(CC) -c  $(CFLAGS) $<
+	
+$(NAME): $(OBJ) ./mandatory/push_swap.h ./libft/libft.h
 	@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 	@echo "Compiling Successfull"
 
-bonus: $(BONUS_NAME) 
-
+bonus: $(BONUS_NAME)
+ 
 $(BONUS_NAME) : $(BOBJ) ./bonus/push_swap_bonus.h ./libft/libft.h
 	@$(CC) $(CFLAGS) $(BNS_SRC) -o $(BONUS_NAME)
 	@echo "Compiling Successfull"
-
+	
+	
 clean:
 	@$(RM) $(OBJ) $(BOBJ)
 	@echo "Object Files Removed Successfully"

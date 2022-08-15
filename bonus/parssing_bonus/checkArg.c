@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 21:10:44 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 00:44:09 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	is_repeat(t_stack_b *stack_a)
 {
 	t_stack_b	*head1;
 	t_stack_b	*head2;
-	int		i;
-	int		j;
+	int			i;
+	int			j;
 
 	i = 0;
 	head1 = stack_a;

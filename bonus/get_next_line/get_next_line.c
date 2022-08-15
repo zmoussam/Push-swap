@@ -6,11 +6,9 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 18:03:11 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 18:32:29 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 00:30:47 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "get_next_line.h"
 
@@ -20,7 +18,7 @@ char	*read_filles(int rd, char *rest, int fd, char *buffer)
 	{
 		rd = read(fd, buffer, BUFFER_SIZE);
 		if (rd < 0)
-		{	
+		{
 			free(buffer);
 			return (NULL);
 		}
@@ -61,7 +59,7 @@ char	*get_next_line(int fd)
 	char		*new_line;
 	static char	*rest;
 	int			rd;
-	
+
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));

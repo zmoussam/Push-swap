@@ -6,20 +6,20 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 20:15:45 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 21:04:39 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 00:26:55 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-void do_inst(t_stack_b **stack_a, t_stack_b **stack_b, char *inst)
+void	do_inst(t_stack_b **stack_a, t_stack_b **stack_b, char *inst)
 {
 	if (!ft_strcmp(inst, "sa\n"))
 		swap(*stack_a);
 	else if (!ft_strcmp(inst, "sb\n"))
 		swap(*stack_b);
 	else if (!ft_strcmp(inst, "ss\n"))
-		ss(*stack_a, *stack_b);		
+		ss(*stack_a, *stack_b);
 	else if (!ft_strcmp(inst, "ra\n"))
 		rotate(stack_a);
 	else if (!ft_strcmp(inst, "rb\n"))

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:55 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 20:24:51 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 00:42:17 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 t_stack_b	*empiler(char **argv, int argc)
 {
-	int		i;
-	int		j;
-	void	*pile;
-	char	**sp;
+	int			i;
+	int			j;
+	void		*pile;
+	char		**sp;
 	t_stack_b	*new;
 
 	pile = NULL;
@@ -42,6 +42,7 @@ t_stack_b	*empiler(char **argv, int argc)
 	}
 	return (pile);
 }
+
 short	check_is_sort(t_stack_b *stack)
 {
 	t_stack_b	*head;
@@ -55,6 +56,7 @@ short	check_is_sort(t_stack_b *stack)
 	}
 	return (1);
 }
+
 int	ft_lstsize(t_stack_b *lst)
 {
 	int	n;
