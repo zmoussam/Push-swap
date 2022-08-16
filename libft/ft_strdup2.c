@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 00:31:29 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 17:36:22 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 23:08:49 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup2(char *s1, int max_bit)
 
 	copy = (char *)malloc((max_bit + 1) * sizeof(char));
 	if (!copy)
-		return (copy);
+		return (write(1, "memory is not allocated!!\n", 26), exit(0), NULL);
 	j = 0;
 	i = 0;
 	while (j < 32 - max_bit)

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:37 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/13 15:42:12 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 23:08:00 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,22 @@ static int	ft_getindex(int i, char c, const char *s)
 	return (i);
 }
 
-char	**ft_free(int a, char **new)
+char	**ft_free(char **new, int f)
 {
-	while (a > 0)
+	int	size;
+
+	size = 0;
+	while (new[size] != NULL)
+			size++;
+	size--;
+	while (size >= 0)
 	{
-		free(new[a]);
-		a--;
+		free(new[size]);
+		size--;
 	}
 	free(new);
+	if (!f)
+		exit(0);
 	return (NULL);
 }
 
@@ -77,7 +85,7 @@ char	**ft_split(char	const *s, char c)
 		return (NULL);
 	new = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!new)
-		return (NULL);
+		return (write(1, "memory is not allocated!!\n", 26), exit(0), NULL);
 	a = 0;
 	i = 0;
 	while (a < count_words(s, c))
@@ -85,7 +93,7 @@ char	**ft_split(char	const *s, char c)
 		b = 0;
 		new[a] = malloc(size_of_words(&s[i], c) + 1);
 		if (!new[a])
-			return (ft_free(a, new));
+			return (ft_free(new, 0));
 		i = ft_getindex(i, c, s);
 		while (s[i] != c && s[i])
 			new[a][b++] = s[i++];

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:47 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/16 00:48:58 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 21:06:01 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s1);
 char	*ft_strjoin(char *s1, char const *s2);
 void	ft_swap(int *a, int *b);
+char	**ft_free(char **new, int f);
 
 #endif

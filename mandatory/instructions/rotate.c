@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:18 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/13 18:28:23 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 16:18:28 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	rotate(t_stack **stack, char *inst)
 {
-	int		size;
 	t_stack	*tmp;
 	t_stack	*head;
 
@@ -22,7 +21,6 @@ void	rotate(t_stack **stack, char *inst)
 	{
 		tmp = *stack;
 		head = *stack;
-		size = ft_lstsize(*stack);
 		while (head)
 		{
 			if (head->next == NULL)
@@ -32,11 +30,9 @@ void	rotate(t_stack **stack, char *inst)
 				tmp->next = NULL;
 				break ;
 			}
-			head->index -= 1;
 			head = head->next;
 		}
-		head->index -= 1;
-		head->next->index = size - 1;
+		get_index(*stack);
 		if (!inst)
 			return ;
 		write(1, inst, 3);

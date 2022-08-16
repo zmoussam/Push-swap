@@ -50,5 +50,14 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b);
 int		get_binary_of_range(t_stack *stack_a);
 void	rr(t_stack **stack_a, t_stack **stack_b);
 int		ft_lstsize(t_stack *lst);
+void	push_all_b(t_stack **stack_a, t_stack **stack_b);
+void	push_back(t_stack **stack_a, t_stack **stack_b, int last_bit);
+void	get_range_aux(t_stack **head1, t_stack **head2, t_stack **tmp, int *i);
+void	for_norm4(t_stack **stack_a, t_stack **stack_b, t_stack *head);
+void	for_norm5_1(t_stack **stack_a, t_stack **stack_b, t_stack *head);
+void	for_norm5_2(t_stack **stack_a, t_stack **stack_b, t_stack *head);
+void	ft_lstdelone(t_stack *lst);
+void	ft_lstclear(t_stack **lst);
+void	ft_free_binary(t_stack *stack);
 
 #endif

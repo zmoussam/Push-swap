@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:31:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/13 18:01:19 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 23:11:56 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		stack_a = empiler(argv, argc);
 		is_repeat(stack_a);
 		if (check_is_sort(stack_a))
-			exit(0);
+			ft_lstclear(&stack_a);
 		get_range(stack_a);
 		if (ft_lstsize(stack_a) <= 5)
 			sort_short_list(&stack_a, &stack_b, ft_lstsize(stack_a));

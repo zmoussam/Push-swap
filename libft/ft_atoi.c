@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 17:31:28 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/16 00:45:54 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 19:44:22 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	print_error(void)
 {
 	write(1, "error\n", 6);
-	exit(1);
 }
 
 void	count_sign(const char *str)

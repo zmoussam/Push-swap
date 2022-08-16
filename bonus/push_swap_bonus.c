@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 23:41:49 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/16 00:18:14 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 20:53:50 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 		inst = get_next_line(0);
 		while (inst)
 		{
-			check_inst(inst);
+			check_inst(inst, &stack_a, &stack_a);
 			do_inst(&stack_a, &stack_b, inst);
 			inst = get_next_line(0);
 		}
@@ -34,5 +34,6 @@ int	main(int argc, char **argv)
 			write(1, "OK\n", 3);
 		else
 			write(1, "KO\n", 3);
+		ft_lstclear(&stack_a);
 	}
 }

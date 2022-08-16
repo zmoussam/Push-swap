@@ -1,31 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 17:32:10 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/16 19:42:05 by zmoussam         ###   ########.fr       */
+/*   Created: 2022/08/16 23:19:12 by zmoussam          #+#    #+#             */
+/*   Updated: 2022/08/16 23:23:06 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	push(t_stack **stack_dst, t_stack **stack_src, char *inst)
+void	ft_lstdelone(t_stack *lst)
 {
-	t_stack	*tmp;
+	if (lst)
+		free(lst);
+}
 
-	if (*stack_src)
+void	ft_lstclear(t_stack **lst)
+{
+	t_stack	*temp;
+
+	while (*lst)
 	{
-		tmp = *stack_src;
-		*stack_src = tmp->next;
-		tmp->next = *stack_dst;
-		*stack_dst = tmp;
-		if (!inst)
-			return ;
-		get_index(*stack_dst);
-		get_index(*stack_src);
-		write(1, inst, 3);
+		temp = *lst;
+		*lst = (*lst)->next;
+		ft_lstdelone(temp);
+	}
+	lst = NULL;
+}
+
+void	ft_free_binary(t_stack *stack)
+{
+	t_stack	*head;
+	char	*temp;
+
+	head = stack;
+	while (head)
+	{
+		temp = head->binary;
+		free(temp);
+		head = head->next;
 	}
 }

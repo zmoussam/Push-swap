@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:30:33 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/14 20:07:14 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 19:13:57 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sort_short_list(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	get_range(*stack_a);
 	if (size == 1)
-		exit(0);
+		ft_lstclear(stack_a);
 	else if (size == 2)
 	{
 		if ((*stack_a)->data > (*stack_a)->next->data)
@@ -70,33 +70,13 @@ void	sort_size3(t_stack **stack_a)
 void	sort_size4(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*head;
-	int		i;
-	int		index;
 
 	head = *stack_a;
-	i = 0;
 	get_range(*stack_a);
 	while (head)
 	{
 		if (head->range == 0)
-		{
-			index = head->index;
-			if (head->index == 3)
-			{
-				reverse_rotate(stack_a, "rra\n");
-				if (check_is_sort(*stack_a))
-					break ;
-			}
-			else
-				while (i++ < index)
-					rotate(stack_a, "ra\n");
-			if (check_is_sort(*stack_a))
-				break ;
-			push(stack_b, stack_a, "pb\n");
-			sort_size3(stack_a);
-			push(stack_a, stack_b, "pa\n");
-			break ;
-		}
+			for_norm4(stack_a, stack_b, head);
 		head = head->next;
 	}
 }
@@ -104,11 +84,9 @@ void	sort_size4(t_stack **stack_a, t_stack **stack_b)
 void	sort_size5(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*head;
-	int		i;
 	int		index;
 
 	head = *stack_a;
-	i = 0;
 	get_range(*stack_a);
 	while (head)
 	{
@@ -117,25 +95,15 @@ void	sort_size5(t_stack **stack_a, t_stack **stack_b)
 			index = head->index;
 			if (index > 2)
 			{
-				while (i++ < 5 - index)
-					reverse_rotate(stack_a, "rra\n");
+				for_norm5_1(stack_a, stack_b, head);
 				if (check_is_sort(*stack_a))
 					return ;
-				push(stack_b, stack_a, "pb\n");
-				sort_size4(stack_a, stack_b);
-				push(stack_a, stack_b, "pa\n");
-				return ;
 			}
 			else
 			{
-				while (i++ < index)
-					rotate(stack_a, "ra\n");
+				for_norm5_2(stack_a, stack_b, head);
 				if (check_is_sort(*stack_a))
 					return ;
-				push(stack_b, stack_a, "pb\n");
-				sort_size4(stack_a, stack_b);
-				push(stack_a, stack_b, "pa\n");
-				return ;
 			}
 		}
 		head = head->next;

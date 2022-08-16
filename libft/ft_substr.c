@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 17:59:35 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/16 00:47:45 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 23:09:52 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		new = malloc(1);
 		if (!new)
-			return (0);
+			return (write(1, "memory is not allocated!!\n", 26), exit(0), NULL);
 		new[0] = '\0';
 		return (new);
 	}
@@ -31,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = ft_strlen(s);
 	new = (char *)malloc(len + 1);
 	if (!new)
-		return (new);
+		return (write(1, "memory is not allocated!!\n", 26), exit(0), NULL);
 	j = 0;
 	while (j < len)
 		new[j++] = s[start++];

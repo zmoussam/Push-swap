@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 18:01:50 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/16 00:46:47 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/16 23:08:22 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *s1)
 		size++;
 	copy = (char *)malloc((size + 1) * sizeof(char));
 	if (copy == NULL)
-		return (copy);
+		return (write(1, "memory is not allocated!!\n", 26), exit(0), NULL);
 	j = 0;
 	while (s1[j])
 	{
