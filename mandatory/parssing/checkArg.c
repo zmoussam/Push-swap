@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/16 16:59:45 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/17 16:09:56 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,19 @@ void	arg_isdigit(char **argv, int argc)
 	while (i > 0)
 	{
 		j = 0;
+		if (argv[i][0] == '\0')
+		{
+			write(1, "error\n", 6);
+			exit(0);
+		}
 		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]) && argv[i][j] > 32 &&
 					(argv[i][j] != '+' && argv[i][j] != '-'))
+			{
 				print_error();
+				exit(0);
+			}
 			j++;
 		}
 		i--;
@@ -45,7 +53,10 @@ void	is_repeat(t_stack *stack_a)
 		while (head2)
 		{
 			if (head1->data == head2->data)
+			{
 				print_error();
+				exit(0);
+			}
 			head2 = head2->next;
 		}
 		head1 = head1->next;

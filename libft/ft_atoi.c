@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 17:31:28 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/16 19:44:22 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/17 14:37:57 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,19 @@ void	count_sign(const char *str)
 	while (str[i])
 	{
 		if ((str[i] == '-' || str[i] == '+') && !ft_isdigit(str[i + 1]))
+		{
 			print_error();
+			exit(0);
+		}
 		if ((str[i] == '+' || str[i] == '-'))
 			count++;
 		i++;
 	}
 	if (count > 1)
+	{
 		print_error();
+		exit(0);
+	}
 }
 
 static void	check_nbr(unsigned long nbr, int signe)
@@ -41,12 +47,18 @@ static void	check_nbr(unsigned long nbr, int signe)
 	if (signe == -1)
 	{
 		if (nbr > 2147483648)
+		{
 			print_error();
+			exit(0);
+		}
 	}
 	else
 	{
 		if (nbr > 2147483647)
+		{
 			print_error();
+			exit(0);
+		}
 	}
 }
 

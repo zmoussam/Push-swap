@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:32:53 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/16 23:05:26 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/17 16:16:03 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ void	arg_isdigit(char **argv, int argc)
 	while (i > 0)
 	{
 		j = 0;
+		if (argv[i][0] == '\0')
+		{
+			write(1, "error\n", 6);
+			exit(0);
+		}
 		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]) && argv[i][j] > 32 &&

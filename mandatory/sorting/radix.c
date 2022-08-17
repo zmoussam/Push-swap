@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:12:21 by zmoussam          #+#    #+#             */
-/*   Updated: 2022/08/16 23:01:54 by zmoussam         ###   ########.fr       */
+/*   Updated: 2022/08/17 13:25:46 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	get_binary_of_range(t_stack *stack_a)
 void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int		last_bit;
-	int		j;
 	int		size_a;
 
 	size_a = 0;
